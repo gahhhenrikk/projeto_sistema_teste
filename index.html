@@ -9,30 +9,40 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
 
-  <title>Hello, world!</title>
+  <title>Gabriel Henrique</title>
 </head>
 
 <body>
-  <h1 id="nome_principal">Gabriel Henrique!</h1>
-      <div class="alert alert-danger" role="alert">
-          <p id='erroAJAX'></p>
-      </div>
+  <h1 id="nome_principal">Teste do Gabriel Henrique!</h1>
+  <div id="avisoInicial" class="alert alert-secondary" role="alert">
+    Clique no botao  <b>Carregar JSON</b> para exibir a lista de usuarios!
+  </div>
+  <div id="#avisoS" class="alert alert-success invisivel" role="alert">
+    Requiçao realizada com sucesso!
+  </div>
+  <div class="alert alert-danger invisivel" role="alert">
+    <p id='erroAJAX'></p>
+  </div>
+<!--O email da usuária que possui o campo username igual a "Samantha" -->
+  <label for="email-query"></label>
+  <div class="input-group mb-3">  
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon3"><b>Email da Samantha</b> </span>
+    </div>
+    <input type="text" class="form-control" id="email-query" aria-describedby="basic-addon3" disabled>
+  </div>
+
+
   <table class="table table-dark">
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">Email de todos usurios</th>
-        <th scope="col">Nome</th>
+        <th scope="col">ID</th>
+        <th scope="col">WebSites de Usuarios</th>
       </tr>
     </thead>
     <tbody id="tabela-usuarios">
-      <tr class="usuario">
-        <th class="usuario-id" scope="row">1</th>
-        <td class="usuario-email">Mark@mark</td>
-        <td class="usuario-nome">Mark</td>
-      </tr>
-
     </tbody>
   </table>
 
