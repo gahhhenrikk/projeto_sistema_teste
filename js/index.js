@@ -9,21 +9,29 @@ let erroAjax = document.querySelector('#erroAJAX');
 console.log(btnCarregarJson);
 console.log(erroAjax);
 
+
+
+
 /**
  * Logica de carregar JSON
  */
 let objeto_http = new XMLHttpRequest();
 
-btnCarregarJson.addEventListener('click',()=>{
+btnCarregarJson.addEventListener('click', () => {
     //alert('boto clicado!');
-    objeto_http.open("GET","https://jsonplaceholder.typicode.com/users");
-    objeto_http.addEventListener('load',()=>{
-        if(objeto_http.status == 200){
+    objeto_http.open("GET", "https://jsonplaceholder.typicode.com/users");
+    objeto_http.addEventListener('load', () => {
+        if (objeto_http.status == 200) {
             //console.log('conexao feita');
             ///console.log(objeto_http.responseText);
             //console.log(typeof `Tipo da resposta antes: ${objeto_http.responseText}`);
             let usuarios = JSON.parse(objeto_http.responseText);
-        }else{
+
+            usuarios.forEach(usuario => {
+                adicionarUsuarionaTabela(usuario);
+            });
+
+        } else {
             //console.log(objeto_http.status == 400);
             erroAjax.textContent = `Opa, parece que algo deu errado ao tentar carregar os usuarios, tente novamente mais tarde!`;
         }
@@ -31,3 +39,56 @@ btnCarregarJson.addEventListener('click',()=>{
     objeto_http.send();
 
 });
+
+/**
+ * Funçoes
+ */
+
+function adicionarUsuarionaTabela(usuario) {
+    console.log(usuario);
+    let usuarioTr = montaTr(usuario);
+    let tabela = document.querySelector('#tabela-usuarios');
+    console.log(tabela);
+    tabela.appendChild(usuarioTr);
+}
+
+function montaTr(usuarios) {
+    let usuarioTr = document.createElement("tr");
+    usuarioTr.appendChild(montarTd(usuarios.id));
+    usuarioTr.appendChild(montarTd(usuarios.email));
+    usuarioTr.appendChild(montarTd(usuarios.name));
+
+    return usuarioTr;
+}
+
+function montarTd(dados) {
+    let td = document.createElement('td');
+    td.textContent = dados;
+    return td;
+}
+    /*
+}
+{
+    "id": 1,
+    "name": "Leanne Graham",
+    "username": "Bret",
+    "email": "Sincere@april.biz",
+    "address": {
+      "street": "Kulas Light",
+      "suite": "Apt. 556",
+      "city": "Gwenborough",
+      "zipcode": "92998-3874",
+      "geo": {
+        "lat": "-37.3159",
+        "lng": "81.1496"
+      }
+    },
+    "phone": "1-770-736-8031 x56442",
+    "website": "hildegard.org",
+    "company": {
+      "name": "Romaguera-Crona",
+      "catchPhrase": "Multi-layered client-server neural-net",
+      "bs": "harness real-time e-markets"
+    }
+  },
+*/
