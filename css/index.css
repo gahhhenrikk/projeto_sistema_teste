@@ -1,3 +1,8 @@
+body, html {
+    background-color: lightgray;
+    height: 100%;
+    width: 100%;
+}
 .invisivel {
     display: none;
 }
@@ -5,11 +10,5 @@
     display: none;
 }
 
-body {
-    background-color: lightgray;
-}
 
-h1 {
-    font-weight: lighter;
-    color: black;
-}
+

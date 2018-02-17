@@ -1,15 +1,25 @@
-var btnCarregarJson = document.querySelector('#Carregar');
+/**
+ * @name Seleçao do DOM
+ */
+let btnCarregarJson = document.querySelector('#Carregar');
+let proucuraUsuario = document.querySelector('#email-query');
+let contaHemisferioSul = document.querySelector('#hemisferio-query');
+let erroAjax = document.querySelector('#erroAJAX');
+let paiErroAjax = document.querySelector('.invisivel');
+/**
+ * @name Objetos e Arrays
+ */
 let objeto_http = new XMLHttpRequest();
-
+let usuariosEmisferioSul = [];
+/**
+ * @event Eventos de Click e Ajax
+ */
 btnCarregarJson.addEventListener('click', () => {
-
-    let usuariosEmisferioSul = [];
     objeto_http.open("GET", "https://jsonplaceholder.typicode.com/users");
     objeto_http.addEventListener('load', () => {
         if (objeto_http.status == 200) {
             btnCarregarJson.classList.add('esconder');
             let usuarios = JSON.parse(objeto_http.responseText);
-            let proucuraUsuario = document.querySelector('#email-query');
             usuarios.forEach(usuario => {
                 if (usuario.username == 'Samantha') {
                     console.log(usuario)
@@ -20,10 +30,8 @@ btnCarregarJson.addEventListener('click', () => {
                     usuariosEmisferioSul.push(usuario);
                 }
             });
-            console.log("Usuarios do emisferio sul: " + usuariosEmisferioSul +'\n Total de usurios do emisferios sul:' + usuariosEmisferioSul.length);
+            contaHemisferioSul.value = usuariosEmisferioSul.length;
         } else {
-            let erroAjax = document.querySelector('#erroAJAX');
-            let paiErroAjax = document.querySelector('.invisivel');
             paiErroAjax.classList.remove('invisivel');
             erroAjax.textContent = `Opa, parece que algo deu errado ao tentar carregar os usuarios, tente novamente mais tarde!`;
         }

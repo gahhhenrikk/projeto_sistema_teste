@@ -9,50 +9,49 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
-    <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/index.css">
 
-  <title>Gabriel Henrique</title> 
-  <svg-icon><src href="sprite.svg#si-glyph-person" /></svg-icon>
+  <title>Gabriel Henrique</title>
 </head>
-
 <body>
-  <h1>Teste do Gabriel Henrique!</h1>
-  <div id="avisoInicial" class="alert alert-secondary" role="alert">
-    Clique no botão  <b>Carregar JSON</b> para exibir a lista de usuários!
-  </div>
-  <div class="alert alert-danger invisivel" role="alert">
-    <p id='erroAJAX'></p>
-  </div>
-<!--O email da usuária que possui o campo username igual a "Samantha" -->
-  <label for="email-query"></label>
-  <div class="input-group mb-3">  
-    <div class="input-group-prepend">
-      <span class="input-group-text" id="basic-addon3"><b>Email da Samantha</b> </span>
+  <div class="container">
+    <h2><span class="badge badge-secondary">Teste do Gabriel Henrique!</span></h1>
+    <div id="avisoInicial" class="alert alert-secondary" role="alert">
+      <h4>Clique no botão &nbsp;  <span class="badge badge-secondary">Carregar JSON</span> &nbsp; para exibir a lista de usuários!</h4>
     </div>
-    <input type="text" class="form-control" id="" aria-describedby="basic-addon3" disabled>
-  </div>
-
-  <label for="email-query"></label>
-  <div class="input-group mb-3">  
-    <div class="input-group-prepend">
-      <span class="input-group-text" id="basic-addon3"><b>Total de usuários do emisfério Sul</b> </span>
+    <div class="alert alert-danger invisivel" role="alert">
+      <p id='erroAJAX'></p>
     </div>
-    <input type="text" class="form-control" id="email-query" aria-describedby="basic-addon3" disabled>
   </div>
-
-
-  <table class="table table-dark">
-    <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">WebSites dos Usuários</th>
-      </tr>
-    </thead>
-    <tbody id="tabela-usuarios">
-    </tbody>
-  </table>
-
-  <button  id="Carregar" type="button" class="btn btn-dark">Carregar JSON</button>
+  <div class="container">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon3">
+          <b>Email da Samantha</b>
+        </span>
+      </div>
+      <input type="text" class="form-control" id="email-query" aria-describedby="basic-addon3" disabled>
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon3">
+          <b> Total de usuários do Hemisfério Sul</b>
+        </span>
+      </div>
+      <input type="text" class="form-control" id="hemisferio-query" aria-describedby="basic-addon3" disabled>
+    </div>
+  </div>
+  <div class="container">
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">WebSites dos Usuários</th>
+        </tr>
+      </thead>
+      <tbody id="tabela-usuarios">
+      </tbody>
+    </table>
+    <button id="Carregar" type="button" class="btn btn-dark">Carregar JSON</button>
+  </div>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
@@ -64,5 +63,4 @@
   <script src="js/functions.js"></script>
 
 </body>
-
 </html>
