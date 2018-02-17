@@ -1,3 +1,6 @@
-.invisivel{
+.invisivel {
+    display: none;
+}
+.esconder{
     display: none;
 }

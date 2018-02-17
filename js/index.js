@@ -1,24 +1,19 @@
-
 //console.log('indexjs carregado!');
-/*
- * Elementos do DOM 
-*/
-let nome = document.querySelector('#nome_principal');
-let btnCarregarJson = document.querySelector('#Carregar');
-
+var btnCarregarJson = document.querySelector('#Carregar');
 //console.log(btnCarregarJson);
-
 /**
  * Logica de carregar JSON
  */
 let objeto_http = new XMLHttpRequest();
 
-btnCarregarJson.addEventListener('click', () => {
+btnCarregarJson.addEventListener('click', (event) => {
     //alert('boto clicado!');
-
+    event.preventDefault();
+    
     objeto_http.open("GET", "https://jsonplaceholder.typicode.com/users");
     objeto_http.addEventListener('load', () => {
         if (objeto_http.status == 200) {
+            btnCarregarJson.classList.add('esconder');
             //console.log('conexao feita');
             ///console.log(objeto_http.responseText);
             //console.log(typeof `Tipo da resposta antes: ${objeto_http.responseText}`);
@@ -41,12 +36,13 @@ btnCarregarJson.addEventListener('click', () => {
             let paiErroAjax = document.querySelector('.invisivel');
             paiErroAjax.classList.remove('invisivel');
             erroAjax.textContent = `Opa, parece que algo deu errado ao tentar carregar os usuarios, tente novamente mais tarde!`;
+            
 
         }
     });
     objeto_http.send();
 
-});
+},false);
 
 /**
  * Funçoes
@@ -73,7 +69,9 @@ function montarTd(dados) {
     let td = document.createElement('td');
     td.textContent = dados;
     return td;
-}
+}/*
+objeto_http.open("GET","https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View")
+
     /*
 }
 {
