@@ -11,13 +11,14 @@
     crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css">
 
-  <title>Gabriel Henrique</title>
+  <title>Gabriel Henrique</title> 
+  <svg-icon><src href="sprite.svg#si-glyph-person" /></svg-icon>
 </head>
 
 <body>
   <h1>Teste do Gabriel Henrique!</h1>
   <div id="avisoInicial" class="alert alert-secondary" role="alert">
-    Clique no botao  <b>Carregar JSON</b> para exibir a lista de usuarios!
+    Clique no botão  <b>Carregar JSON</b> para exibir a lista de usuários!
   </div>
   <div class="alert alert-danger invisivel" role="alert">
     <p id='erroAJAX'></p>
@@ -28,6 +29,14 @@
     <div class="input-group-prepend">
       <span class="input-group-text" id="basic-addon3"><b>Email da Samantha</b> </span>
     </div>
+    <input type="text" class="form-control" id="" aria-describedby="basic-addon3" disabled>
+  </div>
+
+  <label for="email-query"></label>
+  <div class="input-group mb-3">  
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon3"><b>Total de usuários do emisfério Sul</b> </span>
+    </div>
     <input type="text" class="form-control" id="email-query" aria-describedby="basic-addon3" disabled>
   </div>
 
@@ -36,7 +45,7 @@
     <thead>
       <tr>
         <th scope="col">ID</th>
-        <th scope="col">WebSites de Usuarios</th>
+        <th scope="col">WebSites dos Usuários</th>
       </tr>
     </thead>
     <tbody id="tabela-usuarios">
@@ -44,15 +53,16 @@
   </table>
 
   <button  id="Carregar" type="button" class="btn btn-dark">Carregar JSON</button>
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-  <script src="js/index.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/functions.js"></script>
+
 </body>
 
 </html>

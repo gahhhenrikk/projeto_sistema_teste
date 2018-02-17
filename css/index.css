@@ -4,3 +4,12 @@
 .esconder{
     display: none;
 }
+
+body {
+    background-color: lightgray;
+}
+
+h1 {
+    font-weight: lighter;
+    color: black;
+}
